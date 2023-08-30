@@ -1,7 +1,3 @@
-import System.Win32 (xBUTTON1, COORD (yPos))
-import Control.Monad (when)
-import GHC.Float (int2Double)
-import qualified Data.Type.Bool as flotante
 doubleMe x = x+ x
 --Ejercicio 1--
 -- A
