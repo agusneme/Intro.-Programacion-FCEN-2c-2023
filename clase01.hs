@@ -33,7 +33,7 @@ digitoUnidades :: Int -> Int
 digitoUnidades x = mod x 10
 
 valorAbsoluto :: Int -> Int 
-valorAbsoluto x = abs(x)
+valorAbsoluto = abs
 
 digitoDecenas :: Int -> Int
 digitoDecenas x = digitoUnidades(div x 10)
