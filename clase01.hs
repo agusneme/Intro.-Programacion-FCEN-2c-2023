@@ -1,4 +1,5 @@
 import Text.XHtml (base)
+import GHC.Int (neInt32)
 doubleMe x = x+ x
 --Ejercicio 1--
 -- A
@@ -80,13 +81,27 @@ estanRelacionados a b
     | a * a + a* b * k == 0 = True
     | otherwise = False
     where k = -a `div` b
-    
+
+-- Ejercicio 5 --
+
+todosMenores :: (Integer, Integer, Integer) -> Bool
+todosMenores (n1, n2, n3) = (funcion n1 > funciong n1) && (funcion n2 > funciong n2) && (funcion n3 > funciong n3)
+
+funcion :: Integer -> Integer
+funcion n
+    | n <= 7 = n ^ 2
+    | n > 7 = 2* n - 1
+
+funciong :: Integer -> Integer
+funciong g
+    | even g = g `div` 2
+    | otherwise = 3 * g + 1
 
 
 
 -- Ejercicio 9 --
 
-{- En la f1 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 0 devuelve 1 en otro caso devuelve 0
+{-- En la f1 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 0 devuelve 1 en otro caso devuelve 0
 
 En la f2 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 1 devuelve 15, si es igual a -1 devuelve -15
 
@@ -97,5 +112,4 @@ En la f4 se reciben dos numeros en coma flotante (Float), toma ambos valores y l
 En la f5 se recibe una argumento de tipo tupla, donde la tupla tiene dos elementos 'x' e 'y', ambos de tipo 'Float'. Esta funcion calcula el promedio entre ambos elementos de la tupla.
 
 En la f6 se recibe un numero en coma flotante (Float) y un entero (Integer). Trunca el valor del numero de coma flotante para luego compararlo con el segundo valor, si son iguales retorna True. 
--}
-
+--}
