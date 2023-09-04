@@ -1,5 +1,4 @@
-import Text.XHtml (base)
-import GHC.Int (neInt32)
+doubleMe :: Num a => a -> a
 doubleMe x = x+ x
 --Ejercicio 1--
 -- A
@@ -15,7 +14,9 @@ g n
     | n == 16 = 4
     | n == 131 = 1
 -- C
+h :: Int -> Int
 h x = f(g x)
+k :: Int -> Int
 k x = g(f x)
 
 --Ejercicio 2--
@@ -107,16 +108,16 @@ bisiesto a
 
 
 -- Ejercicio 9 --
+{-- 
+a) En la f1 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 0 devuelve 1 en otro caso devuelve 0
 
-{-- En la f1 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 0 devuelve 1 en otro caso devuelve 0
+b) En la f2 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 1 devuelve 15, si es igual a -1 devuelve -15
 
-En la f2 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es igual a 1 devuelve 15, si es igual a -1 devuelve -15
+c) En la f3 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es menor o igual a 9 devuelve 7, si es mayor o igual a 3 devuelve 5
 
-En la f3 se recibe un numero en coma flotante (Float), se utilizan guardas para evaluar el valor de este. Si 'n' es menor o igual a 9 devuelve 7, si es mayor o igual a 3 devuelve 5
+d) En la f4 se reciben dos numeros en coma flotante (Float), toma ambos valores y los suma para luego dividirlo entre 2. Calcula el promedio entre dos numeros de coma flotante.
 
-En la f4 se reciben dos numeros en coma flotante (Float), toma ambos valores y los suma para luego dividirlo entre 2. Calcula el promedio entre dos numeros de coma flotante.
+e) En la f5 se recibe una argumento de tipo tupla, donde la tupla tiene dos elementos 'x' e 'y', ambos de tipo 'Float'. Esta funcion calcula el promedio entre ambos elementos de la tupla.
 
-En la f5 se recibe una argumento de tipo tupla, donde la tupla tiene dos elementos 'x' e 'y', ambos de tipo 'Float'. Esta funcion calcula el promedio entre ambos elementos de la tupla.
-
-En la f6 se recibe un numero en coma flotante (Float) y un entero (Integer). Trunca el valor del numero de coma flotante para luego compararlo con el segundo valor, si son iguales retorna True. 
+f) En la f6 se recibe un numero en coma flotante (Float) y un entero (Integer). Trunca el valor del numero de coma flotante para luego compararlo con el segundo valor, si son iguales retorna True. 
 --}
