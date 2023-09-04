@@ -86,13 +86,14 @@ estanRelacionados a b
 -- Ejercicio 4 --
 
 --A
-prodInt :: (Integer,Integer) -> (Integer,Integer) -> Integer
+prodInt :: (Float,Float) -> (Float,Float) -> Float
 prodInt (a,b) (c,d) = a*c + b*d 
 --Pregunta como puedo hacer para que valga para R3--
 
 --B
-todoMenor ::  (Integer,Integer) -> (Integer,Integer) -> Bool
-todoMenor (a,b) (c,d) = a < c && b < d
+todoMenor ::  (Float,Float) -> (Float,Float) -> Bool
+todoMenor u v = (fst u < fst v) && (snd u < snd v)
+-- ((a,b)(c,d) = a < b && c < d)--
 
 --C
 distanciaPuntos :: Floating a => (a, a) -> (a, a) -> a
@@ -102,10 +103,12 @@ distanciaPuntos (a,b) (c,d) = sqrt((c-a)^2 + (d-b)^2)
 sumaTerna :: Num a => (a, a, a) -> a
 sumaTerna (a,b,c) = a+b+c
 
---E --FALTA HACER--
-
+--E 
+sumaMultiplos :: (Integer, Integer, Integer) -> Integer -> Integer
+sumaMultiplos (a,b,c) n = sum[x | x <- [a,b,c], x `mod` n == 0]
+    
 --F
-
+posPrimerPar :: (Integer,Integer,Integer) -> Integer
 posPrimerPar (a,b,c)
     | even a = 1
     | even b = 2
@@ -119,6 +122,7 @@ crearPar a b = (a,b)
 --H
 invertir :: (a,b) -> (b,a)
 invertir (a,b) = (b,a)
+
 -- Ejercicio 5 --
 
 todosMenores :: (Integer, Integer, Integer) -> Bool
