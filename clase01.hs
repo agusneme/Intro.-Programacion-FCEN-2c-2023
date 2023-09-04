@@ -83,6 +83,36 @@ estanRelacionados a b
     | otherwise = False
     where k = -a `div` b
 
+-- Ejercicio 4 --
+
+--A
+prodInt :: (Integer,Integer) -> (Integer,Integer) -> Integer
+prodInt (a,b) (c,d) = a*c + b*d 
+--Pregunta como puedo hacer para que valga para R3--
+
+--B
+todoMenor ::  (Integer,Integer) -> (Integer,Integer) -> Bool
+todoMenor (a,b) (c,d) = a < c && b < d
+
+--C
+distanciaPuntos :: Floating a => (a, a) -> (a, a) -> a
+distanciaPuntos (a,b) (c,d) = sqrt((c-a)^2 + (d-b)^2)
+
+--D
+sumaTerna :: Num a => (a, a, a) -> a
+sumaTerna (a,b,c) = a+b+c
+
+--E
+
+--F
+
+posPrimerPar (a,b,c)
+    | even a = 1
+    | even b = 2
+    | even c = 3
+    | otherwise = 4
+
+
 -- Ejercicio 5 --
 
 todosMenores :: (Integer, Integer, Integer) -> Bool
@@ -104,6 +134,9 @@ bisiesto :: Int -> Bool
 bisiesto a
     | (a `mod` 4 /= 0) || ((a `mod` 100 == 0) &&  (a `mod` 400 /= 0)) = False
     | otherwise = True
+
+-- Ejercicio 7 --
+
 
 -- Ejercicio 8 --
 
