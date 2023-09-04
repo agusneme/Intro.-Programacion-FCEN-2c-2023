@@ -105,6 +105,16 @@ bisiesto a
     | (a `mod` 4 /= 0) || ((a `mod` 100 == 0) &&  (a `mod` 400 /= 0)) = False
     | otherwise = True
 
+-- Ejercicio 8 --
+
+comparar :: Int -> Int -> Int
+comparar a b
+    | sumaUltimosDosDigitos a < sumaUltimosDosDigitos b = 1
+    | sumaUltimosDosDigitos a > sumaUltimosDosDigitos b = -1
+    | otherwise = 0
+
+sumaUltimosDosDigitos :: Int -> Int
+sumaUltimosDosDigitos x = (x `mod` 10) + (x `div` 10 `mod` 10)
 
 
 -- Ejercicio 9 --
