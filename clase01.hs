@@ -49,7 +49,7 @@ ambosSon0 x y
     | x == 0 && y == 0 = True
     | otherwise = False
 
--- F ????????????????
+-- F --FALTA HACER--
 
 
 -- G
@@ -102,7 +102,7 @@ distanciaPuntos (a,b) (c,d) = sqrt((c-a)^2 + (d-b)^2)
 sumaTerna :: Num a => (a, a, a) -> a
 sumaTerna (a,b,c) = a+b+c
 
---E
+--E --FALTA HACER--
 
 --F
 
@@ -141,8 +141,7 @@ bisiesto a
     | (a `mod` 4 /= 0) || ((a `mod` 100 == 0) &&  (a `mod` 400 /= 0)) = False
     | otherwise = True
 
--- Ejercicio 7 --
-
+-- Ejercicio 7 -- --FALTA HACER--
 
 -- Ejercicio 8 --
 
