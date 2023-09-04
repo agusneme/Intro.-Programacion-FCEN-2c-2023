@@ -112,7 +112,13 @@ posPrimerPar (a,b,c)
     | even c = 3
     | otherwise = 4
 
+--G
+crearPar :: a -> b -> (a,b)
+crearPar a b = (a,b)
 
+--H
+invertir :: (a,b) -> (b,a)
+invertir (a,b) = (b,a)
 -- Ejercicio 5 --
 
 todosMenores :: (Integer, Integer, Integer) -> Bool
