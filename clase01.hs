@@ -97,6 +97,13 @@ funciong g
     | even g = g `div` 2
     | otherwise = 3 * g + 1
 
+-- Ejercicio 6 --
+
+bisiesto :: Int -> Bool
+bisiesto a
+    | (a `mod` 4 /= 0) || ((a `mod` 100 == 0) &&  (a `mod` 400 /= 0)) = False
+    | otherwise = True
+
 
 
 -- Ejercicio 9 --
