@@ -79,6 +79,35 @@ sumarPotencias n m = sumaBaseFija n m + sumarPotencias (n-1) m
 -- Ejercicio 16
 
 menorDivisor :: Integer -> Integer
-menorDivisor 
-    | x < 1 = True
-    | otherwise = 
+menorDivisor x = menorDivisorHasta x 2
+
+menorDivisorHasta :: Integer -> Integer -> Integer
+menorDivisorHasta x d | x == d = x
+    | mod x d == 0 = d
+    | otherwise = menorDivisorHasta x (d+1)
+
+-- Ejercicio 19
+
+esPrimo :: Integer -> Bool
+esPrimo x = menorDivisor x == x
+
+proximoPrimo :: Integer -> Integer
+proximoPrimo x | esPrimo x = x
+    | otherwise = proximoPrimo (x+1) 
+
+
+esSumaInicialDePrimos :: Integer -> Bool
+esSumaInicialDePrimos n = esSumaPrimerosKPrimos n 1
+
+esSumaPrimerosKPrimos :: Integer -> Integer -> Bool
+esSumaPrimerosKPrimos n k | n == sumaPrimerosKPrimos k = True
+    | n < sumaPrimerosKPrimos k = False
+    | otherwise = esSumaPrimerosKPrimos n (k+1)
+
+sumaPrimerosKPrimos :: Integer -> Integer
+sumaPrimerosKPrimos 1 = 2
+sumaPrimerosKPrimos k = sumaPrimerosKPrimos (k-1) + kEsimoPrimo k
+
+kEsimoPrimo :: Integer -> Integer
+kEsimoPrimo 1 = 2
+kEsimoPrimo k = proximoPrimo (kEsimoPrimo (k-1) +1)
