@@ -32,5 +32,54 @@ ultimoDigito x = mod x 10
 
 sacarUltimoDigito :: Integer -> Integer
 sacarUltimoDigito x = div x 10
+-- Ejercicio 13 ^^^
+{-
+sumatoriaDoble ::  Integer -> Integer -> Integer
+sumatoriaDoble _ 0 = 0
+sumatoriaDoble n j = n^2 + sumatoriaDoble n(m-1)
+-}
+
+sumaBaseFija :: Integer -> Integer -> Integer
+sumaBaseFija b 1 = b
+sumaBaseFija b e = sumaBaseFija b (e-1) + b ^ e
+
+sumarPotencias :: Integer -> Integer -> Integer
+sumarPotencias 1 m = sumaBaseFija 1 m
+sumarPotencias n m = sumaBaseFija n m + sumarPotencias (n-1) m
 
 
+-- Ejercicio 16
+
+menorDivisor :: Integer -> Integer
+menorDivisor x = menorDivisorHasta x 2
+
+menorDivisorHasta :: Integer -> Integer -> Integer
+menorDivisorHasta x d | x == d = x
+    | mod x d == 0 = d
+    | otherwise = menorDivisorHasta x (d+1)
+
+-- Ejercicio 19
+
+esPrimo :: Integer -> Bool
+esPrimo x = menorDivisor x == x
+
+proximoPrimo :: Integer -> Integer
+proximoPrimo x | esPrimo x = x
+    | otherwise = proximoPrimo (x+1) 
+
+
+esSumaInicialDePrimos :: Integer -> Bool
+esSumaInicialDePrimos n = esSumaPrimerosKPrimos n 1
+
+esSumaPrimerosKPrimos :: Integer -> Integer -> Bool
+esSumaPrimerosKPrimos n k | n == sumaPrimerosKPrimos k = True
+    | n < sumaPrimerosKPrimos k = False
+    | otherwise = esSumaPrimerosKPrimos n (k+1)
+
+sumaPrimerosKPrimos :: Integer -> Integer
+sumaPrimerosKPrimos 1 = 2
+sumaPrimerosKPrimos k = sumaPrimerosKPrimos (k-1) + kEsimoPrimo k
+
+kEsimoPrimo :: Integer -> Integer
+kEsimoPrimo 1 = 2
+kEsimoPrimo k = proximoPrimo (kEsimoPrimo (k-1) +1)
