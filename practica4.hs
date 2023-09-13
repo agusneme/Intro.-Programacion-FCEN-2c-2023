@@ -14,13 +14,17 @@ parteEntera x
     | x >= 1 = 1 + parteEntera(x-1)
     | otherwise = (-1) + parteEntera(x+1)
 
+-- Ejercicio 3
+
+esDivisible :: Integer ->Integer ->Bool
+esDivisible x y |
 
 -- Ejercicio 7
 
 todosDigitosIguales :: Integer -> Bool
 todosDigitosIguales x
     | x < 10 = True
-    | otherwise  = (ultimoDigito x == ultimoDigito (sacarUltimoDigito x))  
+    | otherwise  = ultimoDigito x == ultimoDigito (sacarUltimoDigito x)
     
 
 ultimoDigito :: Integer -> Integer
