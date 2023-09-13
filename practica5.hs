@@ -22,7 +22,7 @@ ordenar [] = []
 ordenar (x:xs) = minimo xs : ordenar (quitar (minimo xs) xs) 
 
 quitar :: Int -> [Int] -> [Int]
-quitar e (x:xs) | e /= x = x : (quitar e xs)
+quitar e (x:xs) | e /= x = x : quitar e xs
     | otherwise = xs
 
 minimo :: [Int] -> Int

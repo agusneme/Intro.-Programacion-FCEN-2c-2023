@@ -16,9 +16,6 @@ parteEntera x
 
 -- Ejercicio 3
 
-esDivisible :: Integer ->Integer ->Bool
-esDivisible x y |
-
 -- Ejercicio 7
 
 todosDigitosIguales :: Integer -> Bool
