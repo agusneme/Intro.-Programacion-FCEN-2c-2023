@@ -16,6 +16,23 @@ parteEntera x
 
 -- Ejercicio 3
 
+esDivisible :: Integer -> Integer -> Bool
+esDivisible x y
+    | y == 0 = False
+    | x < y = False
+    | x == y = True
+    | otherwise = esDivisible (x - y) y
+
+-- Ejercicio 4
+
+sumaImpares :: Integer -> Integer
+sumaImpares 0 = 0
+sumaImpares x = (2*x-1) + sumaImpares (x-1)
+
+-- Ejercicio 5
+
+
+
 -- Ejercicio 7
 
 todosDigitosIguales :: Integer -> Bool
