@@ -1,4 +1,5 @@
 module Solucion  where
+-- dc_YeNtO
 
 {-
 problema relacionesValidas (relaciones: seq⟨String × String⟩) : Bool {
@@ -27,7 +28,7 @@ sacarDuplicados (x:xs) = x : sacarDuplicados (quitar x xs)
         quitar y (z:zs)
             |y == z = quitar y zs
             |otherwise = z : quitar y zs
-
+        
 crearListaRelaciones :: [(String, String)] -> [String]
 crearListaRelaciones [] = []
 crearListaRelaciones ((x,y):xs) = x : y : crearListaRelaciones xs
