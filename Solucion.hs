@@ -69,14 +69,15 @@ personaConMasAmigos ((x,y):relaciones)
     |if amigos1>amigos2 then amigos1 else amigos2 
 -}
 
-cantVeces :: (Eq t) => [t] -> [t,Int)]
+{-
+cantVeces :: (Eq t) => [t] -> [(t,Int)]
 cantVeces [] = []
 cantVeces (x:xs) = (x, cantdeAp x (x:xs)): cantVeces (quitar x xs)
 
-maximo :: [t,Int] -> t
+maximo :: [(t,Int)] -> t
 -- requiere : xs no vacio
 maximo [t1,n1] = t1
-maximo ((t1,n1):(t2,n2):xs
+maximo ((t1,n1):(t2,n2):xs)
     | n1 >= n2 = maximo ((t1,n1):xs)
     | otherwise = maximo ((t2,n2):xs)
 
@@ -84,3 +85,4 @@ maximo ((t1,n1):(t2,n2):xs
 elemQMasAparece :: (Eq t) => [t] -> t
 elemQMasAparece [x] = x
 elemQMasAparece xs = maximo (cantVeces xs)
+-}
