@@ -1,10 +1,6 @@
+ -- Ejercicio 1.1 
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use foldl" #-}
-import Solucion (sacarDuplicados)
-import Data.Graph (reverseTopSort)
-import Text.XHtml (rev)
-
- -- Ejercicio 1.1 
 longitud :: [t] -> Integer
 longitud [] = 0
 longitud (_:xs) = 1 + longitud xs
@@ -57,15 +53,49 @@ todosIguales (x:y:xs)
 todosDistintos :: (Eq t) => [t] -> Bool
 todosDistintos [] = True
 todosDistintos (x:xs) = notElem x xs && todosDistintos xs
-
-
     
 -- Ejercicio 2.4
 hayRepetidos :: Eq t => [t] -> Bool
 hayRepetidos [] = False
 hayRepetidos (x:xs) = elem x xs || hayRepetidos xs
 
+-- Ejercicio 2.5
+quitar :: (Eq t) => t -> [t] -> [t]
+quitar _ [] = []
+quitar y (z:zs)
+        | y == z = quitar y zs
+        |otherwise = z : quitar y zs
 
+-- Ejercicio 2.6
+
+quitarTodos :: (Eq t) => t -> [t] -> [t]
+quitarTodos _ [] = []
+quitarTodos x (y:ys)
+    | x == y    = quitarTodos x ys
+    | otherwise = y : quitarTodos x ys
+
+-- Ejercicio 2.7
+
+
+eliminarRepetidos :: (Eq t) => [t] -> [t]
+eliminarRepetidos xs = eliminarRepetidosAux xs []
+
+eliminarRepetidosAux :: (Eq t) => [t] -> [t] -> [t]
+eliminarRepetidosAux [] _ = []
+eliminarRepetidosAux (x:xs) acc
+    | x `elem` acc = eliminarRepetidosAux xs acc
+    | otherwise   = x : eliminarRepetidosAux xs (x:acc)
+
+-- Ejercicio 2.8
+
+mismosElementos :: (Eq t) => [t] -> [t] -> Bool
+mismosElementos s r = sinRepetir s == sinRepetir r
+
+sinRepetir :: (Eq t) => [t] -> [t]
+sinRepetir [] = []
+sinRepetir (x:xs)
+    | x `elem` xs  = sinRepetir xs
+    | otherwise = x : sinRepetir xs
 
 
 -- Ejercicio 3
@@ -86,8 +116,8 @@ ordenar :: [Int] -> [Int]
 ordenar [] = []
 ordenar (x:xs) = minimo xs : ordenar (quitar (minimo xs) xs) 
 
-quitar :: Int -> [Int] -> [Int]
-quitar e (x:xs) | e /= x = x : quitar e xs
+quitar2 :: Int -> [Int] -> [Int]
+quitar2 e (x:xs) | e /= x = x : quitar e xs
     | otherwise = xs
 
 minimo :: [Int] -> Int
