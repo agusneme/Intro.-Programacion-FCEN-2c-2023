@@ -35,6 +35,31 @@ reversoAux (x:xs) acc = reversoAux xs (x:acc)
 
 --Ejercicio 2
 
+--Ejercicio 2.1
+
+pertenece ::  (Eq t) => t -> [t] -> Bool 
+pertenece _ [] = False
+pertenece e (x:xs)
+    | e == x = True
+    | otherwise = pertenece  e xs
+
+-- Ejercicio 2.2
+
+todosIguales :: (Eq t) => [t] -> Bool
+todosIguales [] = True
+todosIguales [x] = True
+todosIguales (x:y:xs)
+    | x == y    = todosIguales (y:xs)
+    | otherwise = False
+
+-- Ejercicio 2.3
+
+todosDistintos :: (Eq t) => [t] -> Bool
+todosDistintos [] = True
+todosDistintos (x:xs) = notElem x xs && todosDistintos xs
+
+
+    
 -- Ejercicio 2.4
 hayRepetidos :: Eq t => [t] -> Bool
 hayRepetidos [] = False
