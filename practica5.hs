@@ -1,6 +1,5 @@
  -- Ejercicio 1.1 
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Use foldl" #-}
+
 longitud :: [t] -> Integer
 longitud [] = 0
 longitud (_:xs) = 1 + longitud xs
