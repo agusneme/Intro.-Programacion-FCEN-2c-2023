@@ -91,8 +91,91 @@ def es_bisiesto(anio:int) -> str:
     else:
         print(f"{anio} no es bisiesto.")
 
-print(es_bisiesto(2012))
+#print(es_bisiesto(2012))
 
 #EJERCICIO 4
 #Ejercicio 4.1
 
+def peso_pino(altura:int) -> int:
+
+    peso_total:int = 0
+    altura_en_cm:int = altura * 100
+
+    if altura <= 3:
+        peso_total = altura_en_cm * 3
+    
+    return peso_total 
+
+#FALTA TERMINAR EJERCICIO DE CALCULAR EL PESO
+
+def peso_util(peso:int) -> bool:
+    return peso >=  400 and peso <= 1000
+
+"""
+def sirve_pino(altura:int) -> bool:
+
+    return peso_util(peso_pino(altura)) 
+"""
+
+#EJERCICIO 5
+#Ejercicio 5.1
+
+def devolver_doble_si_par(numero:int) -> int:
+    par = 2
+    if numero % par == 0:
+        resultado = numero * 2
+    else:
+        resultado = numero
+    return resultado
+
+#Ejercicio 5.2
+
+def es_par(numero:int) -> int:
+    return numero % 2 == 0
+
+def devolver_valor_si_es_par_sino_el_que_sigue(numero:int) -> int:
+
+    resultado:int = 0
+    if es_par(numero):
+
+        resultado = numero
+    else:
+        resultado = numero +1
+    return resultado
+
+#Ejercicio 5.4
+
+def lindo_nombre(nombre:str) -> str:
+
+    if len(nombre) >= 5:
+        resultado:int = "Tu nombre tiene muchas letras"
+    else:
+        resultado:int = "Tu nombre tiene menos de 5 caracteres." 
+    
+    return resultado
+
+#Ejercicio 5.5
+
+def elRango(numero):
+
+    if numero < 5:
+        resultado:int = "Menor a 5"
+    elif numero >= 10 and numero <= 20:
+        resultado:int = "Entre 10 y 20"
+    else:
+        resultado:int = "Mayor a 20"
+    
+    return resultado
+
+#Ejercicio 5.6
+
+def vas_de_vacaciones(sexo: str, edad:int):
+    
+    if (sexo.lower() == "m" and edad >=  65) or (sexo.lower() == "f" and edad >=60):
+        trabajo = "Anda de vacaciones"
+    elif edad < 18:
+        trabajo = "Anda de vacaciones"
+    else:
+        trabajo = "Te toca trabajar"
+    
+    return trabajo
