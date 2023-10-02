@@ -105,7 +105,7 @@ def peso_pino(altura:int) -> int:
         peso_total = altura_en_cm * 3
     else:
         primeros_3_metros = 3 * 100
-        metros_restantes = altura - primeros_3_metros
+        metros_restantes = altura_en_cm - primeros_3_metros
         peso_total = primeros_3_metros * 3 + metros_restantes * 2
 
     return peso_total 
@@ -117,7 +117,7 @@ def sirve_pino(altura:int) -> bool:
 
     return peso_util(peso_pino(altura)) 
 
-print(sirve_pino(5))
+print(sirve_pino(4))
 
 #EJERCICIO 5
 #Ejercicio 5.1
@@ -146,6 +146,18 @@ def devolver_valor_si_es_par_sino_el_que_sigue(numero:int) -> int:
     return resultado
 
 #Ejercicio 5.4
+
+def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9(numero:int) -> int:
+    resultado = 0
+
+    if numero % 9 == 0:
+        resultado = numero * 3
+    elif numero % 3 == 0:
+        resultado = numero * 2
+    else:
+        resultado = numero
+    return resultado
+
 
 def lindo_nombre(nombre:str) -> str:
 
