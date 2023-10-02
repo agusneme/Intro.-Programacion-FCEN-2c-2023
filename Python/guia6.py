@@ -103,19 +103,21 @@ def peso_pino(altura:int) -> int:
 
     if altura <= 3:
         peso_total = altura_en_cm * 3
-    
-    return peso_total 
+    else:
+        primeros_3_metros = 3 * 100
+        metros_restantes = altura - primeros_3_metros
+        peso_total = primeros_3_metros * 3 + metros_restantes * 2
 
-#FALTA TERMINAR EJERCICIO DE CALCULAR EL PESO
+    return peso_total 
 
 def peso_util(peso:int) -> bool:
     return peso >=  400 and peso <= 1000
 
-"""
 def sirve_pino(altura:int) -> bool:
 
     return peso_util(peso_pino(altura)) 
-"""
+
+print(sirve_pino(5))
 
 #EJERCICIO 5
 #Ejercicio 5.1
