@@ -53,7 +53,6 @@ def perimetro() -> float:
 
 def cohete(numero:int):
     i = 0
-
     for i in range(i,numero,1):
         
         print(numero)

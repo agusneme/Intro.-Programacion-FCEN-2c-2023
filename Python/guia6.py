@@ -117,8 +117,6 @@ def sirve_pino(altura:int) -> bool:
 
     return peso_util(peso_pino(altura)) 
 
-print(sirve_pino(4))
-
 #EJERCICIO 5
 #Ejercicio 5.1
 
@@ -183,7 +181,7 @@ def elRango(numero):
 
 #Ejercicio 5.6
 
-def vas_de_vacaciones(sexo: str, edad:int):
+def vas_de_vacaciones(sexo: str, edad:int) -> str:
     
     if (sexo.lower() == "m" and edad >=  65) or (sexo.lower() == "f" and edad >=60):
         trabajo = "Anda de vacaciones"
@@ -193,3 +191,71 @@ def vas_de_vacaciones(sexo: str, edad:int):
         trabajo = "Te toca trabajar"
     
     return trabajo
+
+#EJERCICIO 6
+
+#Ejercicio 6.1
+
+def numeros_1_a_10():
+    numero = 1
+    while numero <= 10:
+        print(numero)
+        numero += 1
+    return
+
+#Eejercicio 6.2
+
+def pares_entre_numeros() -> int:
+    numero = 10
+    while numero <= 40:
+        if numero % 2 == 0:
+            print(numero)
+        numero += 1
+    return
+
+#Ejercicio 6.3
+
+def eco_10_veces():
+    numero = 1
+    while numero <= 10:
+        print("ECO")
+        numero += 1
+    return
+
+#Ejercicio 6.4
+
+def cohete(numero:int):
+    i = 0
+    for i in range(i,numero,1):
+    
+        print(numero)
+        numero -= 1
+        if numero == 0:
+            print("Despegue!!")
+
+#Ejercicio 6.5
+
+def viaje_en_el_tiempo_hacia_atras(anio_partida:int, anio_llegada:int) -> str:
+    if anio_partida <= anio_llegada:
+        print("¡Error! El año de partida debe ser mayor que el año de llegada.")
+        return
+    
+    while anio_llegada != anio_partida:
+        print(f"“Viajo un anio al pasado, estamos en el anio: {anio_partida - 1}")
+        anio_partida -= 1
+    return
+    
+#Ejercicio 6.6
+
+def viaje_aristoteles(anio_partida:int, anio_llegada:int) -> str:
+    if anio_partida <= anio_llegada:
+        print("¡Error! El año de partida debe ser mayor que el año de llegada.")
+        return
+    
+    while anio_partida >= -384:
+        print(f"“Viajo un anio al pasado, estamos en el anio: {anio_partida - 20}")
+        anio_partida -= 20
+
+    return 
+
+viaje_aristoteles(2023,-384)
