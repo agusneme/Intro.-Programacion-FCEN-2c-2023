@@ -237,7 +237,7 @@ def cohete(numero:int):
 
 def viaje_en_el_tiempo_hacia_atras(anio_partida:int, anio_llegada:int) -> str:
     if anio_partida <= anio_llegada:
-        print("¡Error! El año de partida debe ser mayor que el año de llegada.")
+        print("El año de partida debe ser mayor que el año de llegada.")
         return
     
     while anio_llegada != anio_partida:
@@ -249,7 +249,7 @@ def viaje_en_el_tiempo_hacia_atras(anio_partida:int, anio_llegada:int) -> str:
 
 def viaje_aristoteles(anio_partida:int, anio_llegada:int) -> str:
     if anio_partida <= anio_llegada:
-        print("¡Error! El año de partida debe ser mayor que el año de llegada.")
+        print("El año de partida debe ser mayor que el año de llegada.")
         return
     
     while anio_partida >= -384:
@@ -258,4 +258,66 @@ def viaje_aristoteles(anio_partida:int, anio_llegada:int) -> str:
 
     return 
 
-viaje_aristoteles(2023,-384)
+#Ejercicio 7 TODO
+
+
+#EJERCICIO 8
+#Ejercicio 8.1
+def ejec_simbolica1():
+    x = 5
+    y = 7
+    x = x+y
+    print(x)
+
+#Ejercicio 8.2
+def ejec_simbolica2():
+    x = 5
+    y = 7
+    z = x + y
+    y = z * 2
+    print(y)
+
+#Ejercicio 8.3
+def ejec_simbolica3():
+    x = 5
+    y = 7
+    x = "hora"
+    y = x *2
+    print(y)
+
+#Ejercicio 8.4
+
+def ejec_simbolica4():
+    x = False
+    res = not(x)
+    print(res)
+
+#Ejercicio 8.5
+
+def ejec_simbolica5():
+    x = True
+    y = False
+    res = x and y
+    x = res and x
+    print(res) 
+    print(x)
+    
+#EJERCICIO 9
+
+def rt(x: int, g: int) -> int:
+    g = g + 1
+    return x + g
+
+g: int = 0
+def ro(x: int) -> int:
+    global g
+    g = g + 1
+    return x + g
+
+print(ro(1))
+print(ro(1))
+print(ro(1))
+
+print(rt(1, 0))
+print(rt(1, 0))
+print(rt(1, 0))
