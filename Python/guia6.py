@@ -143,7 +143,7 @@ def devolver_valor_si_es_par_sino_el_que_sigue(numero:int) -> int:
         resultado = numero +1
     return resultado
 
-#Ejercicio 5.4
+#Ejercicio 5.3
 
 def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9(numero:int) -> int:
     resultado = 0
@@ -156,6 +156,7 @@ def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9(numero:int) -> i
         resultado = numero
     return resultado
 
+#Ejercicio 5.4
 
 def lindo_nombre(nombre:str) -> str:
 
