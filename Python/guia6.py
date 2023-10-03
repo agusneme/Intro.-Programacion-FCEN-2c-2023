@@ -12,8 +12,10 @@ def raizde2():
 
 #Ejercicio 1.4
 def factorial(numero:int):
-    
-    return factorial(numero -1)
+    if numero == 0:
+        return 1
+    else:
+        return numero * factorial(numero -1)
 
 #Ejercicio 1.5
 def perimetro() -> float:
