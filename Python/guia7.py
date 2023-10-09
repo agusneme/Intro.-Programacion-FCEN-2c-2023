@@ -150,4 +150,60 @@ def darVueltaStr(palabra:str) -> str:
 
 #2.6
 
-    
+#EJERCICIO 3
+
+def aprobado(notas:list) -> int:
+
+    aprobacion:int = 0
+
+    promedio = sum(notas)/len(notas)
+
+    for nota in notas:
+        if nota < 4 or promedio < 4:
+            aprobacion = 3
+            break
+        elif nota >= 4 and (promedio >= 4 and promedio < 7):
+            aprobacion = 2
+    return aprobacion
+
+#EJERCICIO 4
+
+#4.1
+
+def estudiantes():
+    lista_estudiantes = []
+
+    while True:
+
+        nombres:str = input("Ingrese el nombre del estudiante: ")
+        if nombres.lower() == 'listo':
+            break
+
+        lista_estudiantes.append(nombres)
+
+    return lista_estudiantes
+
+
+#4.2
+
+def monedero_electronico():    
+    historial_operaciones = []
+
+    while True:
+        operacion = input("Que operacion desea realizar? Escriba 'C' para cargar credito, 'D' para descontar creditos o 'X' para terminar el programa. ")
+
+        if operacion.upper() == 'X':
+            break
+
+        elif operacion.upper() == 'C':
+            transaccion_carga = int(input("Cuantos creditos desea cargar?: "))
+            historial_operaciones.append(('C', transaccion_carga))
+
+        elif operacion.upper() == 'D':
+            transaccion_descontar = int(input("Cuantos creditos desea descontar?: "))
+            historial_operaciones.append(('D', transaccion_descontar))
+        
+
+    return historial_operaciones
+
+print(monedero_electronico())
