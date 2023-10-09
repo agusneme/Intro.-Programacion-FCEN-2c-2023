@@ -4,7 +4,6 @@
 #1.1
 
 def pertenece(lista: list, e: int) -> bool:
-
     pertenecen:bool = False
 
     for elemento in lista:
@@ -98,3 +97,57 @@ def tiene_vocal_distinta(palabra:str) -> bool:
     return len(distintas_vocales) >= 3
         
 
+#SEGUNDA PARTE
+#EJERCICIO 2
+
+#2.1
+
+def cambiador_pares(lista:list) -> list:
+
+    for i in range(0,len(lista),2):
+        lista[i] = 0
+    return lista
+
+#2.2
+
+def cambiador_pares_no_modificando_lista(lista:list) -> list:
+    nueva_lista:list = lista.copy()
+
+    for i in range(0,len(nueva_lista),2):
+        nueva_lista[i] = 0
+    return nueva_lista
+
+#2.3
+def palabra_sin_vocales(palabra:str) ->str:
+
+    vocales:str = 'aeiou'
+    palabra_sin_vocales:str = ''
+    for caracter in palabra:
+        if caracter not in vocales:
+            palabra_sin_vocales += palabra_sin_vocales
+
+    return palabra_sin_vocales
+
+#2.4
+
+def reemplaza_vocales(secuencia:str) -> str:
+
+    vocales:str = 'aeiou'
+    res = []
+
+    for caracter in secuencia:
+        if caracter in vocales:
+            res.append(' ')
+        else:
+            res.append(caracter)
+    
+    return ''.join(res)
+
+#2.5
+
+def darVueltaStr(palabra:str) -> str:
+    return palabra[::-1]
+
+#2.6
+
+    
