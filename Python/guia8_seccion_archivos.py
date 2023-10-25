@@ -62,6 +62,5 @@ print(existe_palabra("texto_pruebas.txt", "perro"))
 #1.3
 def cantidad_apariciones(archivo:str ,palabra:str):
     
-    
+    return
 
-print(cantidad_apariciones("texto_pruebas.txt", "hola"))
