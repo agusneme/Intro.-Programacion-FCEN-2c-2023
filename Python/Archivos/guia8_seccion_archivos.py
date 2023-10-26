@@ -126,8 +126,20 @@ def obtener_palabras_legibles(archivo) -> str:
 
 #EJERCICIO 7
 
-def promedio_estudiante(lu:str) -> float:
+import csv
+
+def promedio_estudiante(lu:str, csv_notas) -> float:
 
 #nro de LU ( str ) , materia ( str ) , fecha ( str ) , nota ( float )
 
-    
+    with open(csv_notas, 'r', newline='') as notas:
+        reader = csv.reader(notas)
+        notas_estudiante = []
+
+        for columna in reader:
+            if columna[0] == lu:
+                notas_estudiante.append(float(columna[3]))
+        
+        promedio = sum(notas_estudiante) / len(notas_estudiante)
+
+    return promedio

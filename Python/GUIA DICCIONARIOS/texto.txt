@@ -1,0 +1,5 @@
+Este es un ejemplo de archivo de texto
+Este archivo contiene palabra
+Ejemplo ejemplo ejemplo
+palabra 
+palabra
