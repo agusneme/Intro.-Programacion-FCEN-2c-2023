@@ -101,3 +101,25 @@ agregar_frase_a_texto_comienzo('Intro.-Programacion-FCEN-2c-2023\Python\Archivos
 
 #EJERCICIO 6
 
+def obtener_palabras_legibles(archivo):
+
+    palabras_legibles = []
+    palabra_actual = ''
+    longitud_minima = 5
+
+    with open(archivo, 'rb') as archivo_binario:
+        contenido = archivo_binario.read().decode('utf-8')
+
+        for caracter in contenido:
+
+            if caracter.isalnum() or caracter in ' _':
+                palabra_actual += caracter
+            else:
+                if len(palabra_actual) >= longitud_minima:
+                    palabras_legibles.append(palabra_actual)
+                palabra_actual = ''
+        
+        if len(palabra_actual) >= longitud_minima:
+            palabras_legibles.append(palabra_actual)
+    
+    return palabras_legibles
