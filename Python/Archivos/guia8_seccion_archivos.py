@@ -26,15 +26,15 @@ def existe_palabra(archivo:str, palabra:str) -> bool:
     return False
 
 #1.3
-def cantidad_apariciones(archivo:str ,palabra:str):
+def cantidad_apariciones(archivo:str ,palabra:str)  -> int:
     return
 
 #EJERCICIO 2
-def es_comentario(linea:str):    
+def es_comentario(linea:str) :    
     linea = linea.strip()
     return linea.startswith("#") 
 
-def es_comentario_pruebas(linea):
+def es_comentario_pruebas(linea) -> bool:
     for c in linea:
         if c != " ":
             if c == "#":
@@ -63,7 +63,7 @@ def sacar_comentarios(archivo:str):
 
 #EJERCICIO 4
 
-def agregar_frase_a_texto_final(archivo:str, frase:str):
+def agregar_frase_a_texto_final(archivo:str, frase:str) -> str:
 
     archivo_sin_frase = open(archivo, 'a')
     archivo_sin_frase.write('\n' + frase)
@@ -76,7 +76,7 @@ frase_final = 'Gracias. Buenas noches.'
 
 #EJERCICIO 5
 
-def agregar_frase_a_texto_comienzo(archivo:str, frase:str):
+def agregar_frase_a_texto_comienzo(archivo:str, frase:str) -> str:
     with open(archivo, 'r') as file:
         contenido = file.read()
 
@@ -101,7 +101,7 @@ agregar_frase_a_texto_comienzo('Intro.-Programacion-FCEN-2c-2023\Python\Archivos
 
 #EJERCICIO 6
 
-def obtener_palabras_legibles(archivo):
+def obtener_palabras_legibles(archivo) -> str:
 
     palabras_legibles = []
     palabra_actual = ''
@@ -123,3 +123,11 @@ def obtener_palabras_legibles(archivo):
             palabras_legibles.append(palabra_actual)
     
     return palabras_legibles
+
+#EJERCICIO 7
+
+def promedio_estudiante(lu:str) -> float:
+
+#nro de LU ( str ) , materia ( str ) , fecha ( str ) , nota ( float )
+
+    
