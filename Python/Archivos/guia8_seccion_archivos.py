@@ -58,18 +58,46 @@ def sacar_comentarios(archivo:str):
     archivo_sin_comentarios.close()
 
 #EJERCICIO 3
+#------------------
+
 
 #EJERCICIO 4
 
-def agregar_frase_a_texto(archivo:str, frase:str):
+def agregar_frase_a_texto_final(archivo:str, frase:str):
 
     archivo_sin_frase = open(archivo, 'a')
-    archivo_sin_frase.write(frase)
+    archivo_sin_frase.write('\n' + frase)
 
     archivo_sin_frase.close()
 
+frase_final = 'Gracias. Buenas noches.'
 
+#agregar_frase_a_texto_final('Intro.-Programacion-FCEN-2c-2023\Python\Archivos\\archivo_prueba.txt',frase)
 
-frase = 'Hola buenos dias.'
+#EJERCICIO 5
 
-agregar_frase_a_texto('Intro.-Programacion-FCEN-2c-2023\Python\Archivos\\archivo_prueba.txt',frase)
+def agregar_frase_a_texto_comienzo(archivo:str, frase:str):
+    with open(archivo, 'r') as file:
+        contenido = file.read()
+
+    with open(archivo, 'w') as file:
+        file.write(frase + '\n')
+        file.write(contenido)
+
+#otra manera de hacerlo abriendolo en 'r+'
+
+def agregar_frase_principio(archivo, frase):
+
+    with open(archivo, 'r+') as archivo_original:
+        contenido = archivo_original.read()
+        archivo_original.seek(0)
+        archivo_original.write(frase)
+        archivo_original.write(contenido)
+    
+
+frase_inicio = 'Hola buenos dias.'
+
+agregar_frase_a_texto_comienzo('Intro.-Programacion-FCEN-2c-2023\Python\Archivos\\archivo_prueba.txt',frase_inicio)
+
+#EJERCICIO 6
+
