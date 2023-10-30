@@ -84,4 +84,49 @@ def la_palabra_mas_frecuente(archivo:str) -> str:
 print(agrupar_por_palabras('Intro.-Programacion-FCEN-2c-2023\Python\GUIA DICCIONARIOS\\texto.txt'))
 print(la_palabra_mas_frecuente('Intro.-Programacion-FCEN-2c-2023\Python\GUIA DICCIONARIOS\\texto.txt'))
 '''
+#EJERCICIO 23
 
+def agregar_producto(inventario:dict,nombre:str,precio:int,cantidad:int):
+
+    informacion_prenda = {"Precio":precio, "Cantidad":cantidad}
+    if nombre not in inventario:
+        inventario[nombre] = informacion_prenda
+    
+    return inventario
+
+
+def actualizar_stock(inventario:dict,nombre:int,cantidad:int):
+    
+    if nombre in inventario:
+        inventario[nombre]["Cantidad"] = cantidad
+    else:
+        print("No se encontro informacion de esa prenda en nuestro inventario.")
+
+    return inventario
+
+def actualizar_precios(inventario:dict,nombre:str,precio:int):
+
+    if nombre in inventario:
+        inventario[nombre]["Precio"] = precio
+    else:
+        print("No se encontro informacion de esa prenda en nuestro inventario.")
+
+    return inventario
+
+
+def calcular_valor_inventario(inventario:dict):
+    valor_total = 0
+    for i in inventario.items():
+        for precio, cantidad in inventario[i].items():
+            
+            valor_total += precio * cantidad
+
+    return valor_total
+
+
+inventario = {}
+agregar_producto(inventario, "Camisa", 20.0, 50)
+agregar_producto(inventario, "Pantalon", 30.0, 30)
+actualizar_stock(inventario, "Camisa", 10)
+valor_total = calcular_valor_inventario(inventario)
+print("Valor total del inventario:", valor_total) # Deberıa imprimir 1300.00
