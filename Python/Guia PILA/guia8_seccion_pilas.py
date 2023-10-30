@@ -81,3 +81,28 @@ def buscar_maximo(pila):
        value = max(next_value, value)
     return value
 
+#EJERCICIO 11
+
+def esta_bien_balanceada(s: str) -> bool:
+    pila = Pila()  # Usamos LifoQueue como pila
+
+    for caracter in s:
+        if caracter == '(':
+            pila.put(caracter)
+        elif caracter == ')':
+            if pila.empty():
+                # Si encontramos un cierre de paréntesis sin una apertura correspondiente, la fórmula no está balanceada
+                return False
+            pila.get()  # Quitamos la apertura de paréntesis correspondiente
+
+    # La fórmula está balanceada si la pila está vacía al final
+    return pila.empty()
+
+# Ejemplos de uso
+formula_balanceada1 = "1 + (2 x 3 = (20 / 5))"
+formula_balanceada2 = "10 * (1 + (2 * (1)))"
+formula_no_balanceada = "1 + ) 2 x 3 ( ( )"
+
+print(esta_bien_balanceada(formula_balanceada1))  # True
+print(esta_bien_balanceada(formula_balanceada2))  # True
+print(esta_bien_balanceada(formula_no_balanceada))  # False
