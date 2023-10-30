@@ -13,10 +13,6 @@ def generar_nros_azar(n):
 n = 4  # Cantidad de números al azar a generar
 cola_de_numeros = generar_nros_azar(n)
 
-# Imprimir la cola de números generados
-while not cola_de_numeros.empty():
-    numero = cola_de_numeros.get()
-    print(numero)
 
 #EJERCICIO 14
 def cantidad_elementos(cola: Cola) -> int:
@@ -37,11 +33,8 @@ cola.put(2)
 cola.put(3)
 
 cantidad = cantidad_elementos(cola)
-print(f"La cola contiene {cantidad} elementos.")
 
-from queue import Queue
-
-def buscar_maximo(cola: Queue) -> int:
+def buscar_maximo(cola: Cola) -> int:
     if cola.empty():
         raise ValueError("La cola está vacía, no se puede buscar un máximo.")
 
@@ -55,17 +48,34 @@ def buscar_maximo(cola: Queue) -> int:
     return maximo
 
 # Ejemplo de uso
-cola = Queue()
+cola = Cola()
 cola.put(5)
 cola.put(10)
 cola.put(252)
 cola.put(8)
 
 maximo = buscar_maximo(cola)
-print(f"El elemento máximo en la cola es: {maximo}")
+
+#EJERCICIO 16
+
+def armar_secuencia_de_bingo():
+    # Crear una cola y agregar los números mezclados a la cola.
+    cola_bingo = Cola()
+    for numero in range(12):
+        numeros = random.randint(0, 99)
+        cola_bingo.put(numeros)
+    
+    return cola_bingo
+
+print(armar_secuencia_de_bingo())
+
+
+
+
+
+
 
 #EJERCICIO 17
-
 # Definimos la cola con elementos de la forma (prioridad, nombre, especialidad)
 cola = Cola()
 cola.put((1, "Paciente1", "Cardiología"))
@@ -86,4 +96,4 @@ def n_pacientes_urgentes(cola):
     return contador
 
 cantidad_urgentes = n_pacientes_urgentes(cola)
-print(f"La cantidad de pacientes urgentes es: {cantidad_urgentes}")
+
