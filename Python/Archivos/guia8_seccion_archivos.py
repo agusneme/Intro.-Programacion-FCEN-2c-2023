@@ -4,12 +4,11 @@
 #1.1
 
 def contar_lineas(archivo:str) -> int:
-    
-    archivo_open = open(archivo, "r")
     contador = 0
-    for linea in archivo_open.readlines():
-        contador += 1
-        
+
+    with open(archivo, "r") as archivo_open:
+        for linea in archivo_open:
+            contador += 1
     archivo_open.close()
     
     return contador
