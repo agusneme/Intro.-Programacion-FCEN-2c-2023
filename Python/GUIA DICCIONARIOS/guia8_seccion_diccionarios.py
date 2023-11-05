@@ -129,6 +129,7 @@ def calcular_valor_inventario(inventario:dict):
 inventario = {}
 agregar_producto(inventario, "Camisa", 20, 50)
 agregar_producto(inventario, "Pantalon", 30, 30)
+actualizar_stock(inventario, "Camisa", 10)
 print(inventario)
 valor_total = calcular_valor_inventario(inventario)
 print("Valor total del inventario:", valor_total) # Deberıa imprimir 1300.00

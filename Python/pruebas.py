@@ -1,22 +1,16 @@
-from queue import Queue as Cola
-import random
+def encontrar_ultima_posicion(lista, numero):
+    for i in range(len(lista) - 1, -1, -1):
+        if lista[i] == numero:
+            return i
+    return -1  # Retorna -1 si el número no se encuentra en la lista
 
-cola = Cola()
-cola.put((1, "Paciente1", "Cardiología"))
-cola.put((4, "Paciente2", "Dermatología"))
-cola.put((2, "Paciente3", "Oftalmología"))
-cola.put((6, "Paciente4", "Pediatría"))
-cola.put((10, "Paciente5", "Neurología"))
+# Ejemplo de uso:
+mi_lista = [1, 2, 3, 4, 2, 5, 0]
+numero_buscado = 2
+ultima_posicion = encontrar_ultima_posicion(mi_lista, numero_buscado)
 
-def pacientes(c):
-    prioridad = 0
-    paciente_n = []
-    while not c.empty():
-        paciente = c.get()
-        paciente_n.put(paciente)
-    for tupla in paciente_n:
-        if tupla[0] < 4:
-            prioridad += 1
-    return prioridad
+if ultima_posicion != -1:
+    print(f"El número {numero_buscado} se encuentra en la última posición: {ultima_posicion}")
+else:
+    print(f"El número {numero_buscado} no se encuentra en la lista.")
 
-print(pacientes(cola))
