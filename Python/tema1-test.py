@@ -1,5 +1,5 @@
 import unittest
-from simulacro_NEME import elementos_exclusivos, ultima_aparicion, contar_traducciones_iguales, convertir_a_diccionario
+from simulacro_en_casa import elementos_exclusivos, ultima_aparicion, contar_traducciones_iguales, convertir_a_diccionario
 
 class Ej1Test(unittest.TestCase):
     def test_trivial(self):
