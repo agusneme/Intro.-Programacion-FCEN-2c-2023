@@ -90,3 +90,11 @@ contarVotos presi [f] [v] = v
 contarVotos presi (f:fs) (v:vs)
     | presi == fst f = v
     | otherwise = contarVotos presi fs vs
+
+--Ejercicio 4
+
+proximoPresidente :: [(String,String)] -> [Int] -> String
+proximoPresidente [(presi,_)] _ = presi
+proximoPresidente (f1:f2:fs) (v1:v2:vs) 
+    | v1 > v2 = proximoPresidente (f1:fs) (v1:vs)
+    | otherwise = proximoPresidente (f2:fs) (v2:vs)
