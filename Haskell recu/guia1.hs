@@ -98,3 +98,13 @@ proximoPresidente [(presi,_)] _ = presi
 proximoPresidente (f1:f2:fs) (v1:v2:vs) 
     | v1 > v2 = proximoPresidente (f1:fs) (v1:vs)
     | otherwise = proximoPresidente (f2:fs) (v2:vs)
+
+removeDuplicates :: Eq a => [a] -> [a]
+removeDuplicates [] = []
+removeDuplicates  (x:xs) = x : removeDuplicates (removeAllOccurrences x xs)
+
+removeAllOccurrences :: Eq a => a -> [a] -> [a]
+removeAllOccurrences _ [] = []
+removeAllOccurrences y (z:zs)
+    | y == z = removeAllOccurrences y zs
+    | otherwise = z : removeAllOccurrences y zs
